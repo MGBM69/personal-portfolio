@@ -1,0 +1,7 @@
+.navbar-container {
+  width: 100%;
+}
+:host ::ng-deep .p-menubar-root-list {
+  justify-content: center;
+  width: 100%;
+}
