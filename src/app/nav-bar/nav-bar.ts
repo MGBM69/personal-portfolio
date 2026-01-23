@@ -17,7 +17,11 @@ export class NavBar implements OnInit {
         icon: 'pi pi-home',
       },
       {
-        label: 'Features',
+        label: 'Portfolio',
+        icon: 'pi pi-star',
+      },
+      {
+        label: 'Resume',
         icon: 'pi pi-star',
       },
       {
