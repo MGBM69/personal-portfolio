@@ -1,0 +1,33 @@
+<div class="navbar-container font-monospace fw-bolder">
+  <!-- Desktop Navbar -->
+  <div class="desktop-nav">
+    <p-menubar [model]="items"></p-menubar>
+  </div>
+
+  <!-- Mobile Navbar -->
+  <div class="mobile-nav">
+    <button
+      pButton
+      icon="pi pi-bars"
+      class="menu-btn"
+      (click)="drawerVisible = true"
+    ></button>
+  </div>
+</div>
+
+<!-- PrimeNG Drawer -->
+<p-drawer
+  [(visible)]="drawerVisible"
+  position="left"
+  [modal]="true"
+  [dismissible]="true"
+  [showCloseIcon]="true"
+>
+  <ul class="drawer-menu">
+    <li *ngFor="let item of items">
+      <a [routerLink]="item.routerLink" (click)="drawerVisible = false">
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+</p-drawer>
