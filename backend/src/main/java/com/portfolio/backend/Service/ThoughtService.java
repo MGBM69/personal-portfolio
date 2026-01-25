@@ -22,6 +22,7 @@ public class ThoughtService {
 
     public List<Thought> getAllThoughts() {
         return thoughtRepository.findAllByOrderByCreatedAtDesc();
+    	
     }
 
 }
