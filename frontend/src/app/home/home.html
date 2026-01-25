@@ -1,1 +1,21 @@
-<p>home works!</p>
+<section>
+  <h2>What do you think about me?</h2>
+
+  <app-thought-form (thoughtSubmitted)="loadThoughts()"></app-thought-form>
+</section>
+
+<hr />
+
+<section>
+  <h2>Thoughts about Banuka</h2>
+
+  <p *ngIf="loading">Loading thoughts...</p>
+
+  <div *ngFor="let thought of thoughts">
+    <h4>{{ thought.name }}</h4>
+    <small>{{ thought.position }}</small>
+    <p>{{ thought.message }}</p>
+    <small>{{ thought.createdAt | date: "medium" }}</small>
+    <hr />
+  </div>
+</section>

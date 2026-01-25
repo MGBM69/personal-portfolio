@@ -1,7 +1,7 @@
 export interface Thought {
-  id?: String;
-  name: String;
-  position?: String;
-  message: String;
-  createdAt?: String;
+  id?: string;
+  name: string;
+  position?: string;
+  message: string;
+  createdAt?: string;
 }
