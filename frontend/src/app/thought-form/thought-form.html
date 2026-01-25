@@ -1,0 +1,20 @@
+<form [formGroup]="thoughtForm" (ngSubmit)="submitThought()">
+  <input type="text" placeholder="Your name" formControlName="name" />
+
+  <input
+    type="text"
+    placeholder="Your position (optional)"
+    formControlName="position"
+  />
+
+  <textarea
+    rows="4"
+    placeholder="What do you think about me?"
+    formControlName="message"
+  >
+  </textarea>
+
+  <button type="submit" [disabled]="submitting">
+    {{ submitting ? "Submitting..." : "Submit Thought" }}
+  </button>
+</form>
