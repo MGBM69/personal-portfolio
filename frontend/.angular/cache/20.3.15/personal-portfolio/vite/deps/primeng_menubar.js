@@ -7,13 +7,15 @@ import {
   Badge,
   BadgeModule,
   BarsIcon,
+  ConnectedOverlayScrollHandler,
+  Ripple
+} from "./chunk-DFWF6I2D.js";
+import {
   BaseComponent,
   Bind,
   BindModule,
-  ConnectedOverlayScrollHandler,
-  PARENT_INSTANCE,
-  Ripple
-} from "./chunk-JGNZPETH.js";
+  PARENT_INSTANCE
+} from "./chunk-RO4U4AO2.js";
 import {
   BaseStyle
 } from "./chunk-XODCHKGO.js";

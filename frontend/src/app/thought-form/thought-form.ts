@@ -4,10 +4,17 @@ import { ThoughtService } from '../Services/thought-service';
 import { Thought } from '../model/thought';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
 @Component({
   selector: 'app-thought-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FloatLabelModule,
+    InputTextModule,
+  ],
   templateUrl: './thought-form.html',
   styleUrl: './thought-form.css',
 })
