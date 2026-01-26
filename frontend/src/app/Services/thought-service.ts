@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ThoughtService {
-  $apiUrl = `${environment.apiUrl}/thoughts`;
-  $http = inject(HttpClient);
+  private apiUrl = `${environment.apiUrl}/thoughts`;
+  http = inject(HttpClient);
 
   //submit thought to backend
   submitThought(thought: Thought): Observable<Thought> {
-    return this.$http.post<Thought>(this.$apiUrl, thought);
+    return this.http.post<Thought>(this.apiUrl, thought);
   }
   // return thoughts from backend
   getThoughts(): Observable<Thought[]> {
-    return this.$http.get<Thought[]>(this.$apiUrl);
+    return this.http.get<Thought[]>(this.apiUrl);
   }
 }

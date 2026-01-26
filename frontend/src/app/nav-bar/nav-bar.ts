@@ -4,11 +4,12 @@ import { MenuItem, PrimeIcons } from 'primeng/api';
 import { DrawerModule } from 'primeng/drawer';
 import { ButtonModule } from 'primeng/button';
 import { NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [MenubarModule, DrawerModule, ButtonModule, NgFor, RouterLink],
+  standalone: true,
+  imports: [MenubarModule, DrawerModule, ButtonModule, RouterModule],
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css',
 })

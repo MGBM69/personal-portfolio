@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Thought } from '../model/thought';
 import { ThoughtService } from '../Services/thought-service';
 import { ThoughtForm } from '../thought-form/thought-form';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [ThoughtForm, CommonModule, DatePipe],
-  templateUrl: './home.html',
+  templateUrl: `./home.html`,
   styleUrl: './home.css',
 })
 export class Home implements OnInit {

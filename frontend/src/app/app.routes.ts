@@ -6,7 +6,11 @@ import { Resume } from './resume/resume';
 import { Contact } from './contact/contact';
 
 export const routes: Routes = [
-  { path: '', component: Home, pathMatch: 'full' },
+  {
+    path: '',
+    loadComponent: () => import('./home/home').then((m) => m.Home),
+  },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'portfolio', component: Portfolio },
   { path: 'projects', component: Projects },
   { path: 'resume', component: Resume },

@@ -1,7 +1,7 @@
 <section>
   <h2>What do you think about me?</h2>
 
-  <app-thought-form (thoughtSubmitted)="loadThoughts()"></app-thought-form>
+  <app-thought-form (thoughtSubmitted)="loadThoughts()"> </app-thought-form>
 </section>
 
 <hr />
@@ -9,13 +9,17 @@
 <section>
   <h2>Thoughts about Banuka</h2>
 
-  <p *ngIf="loading">Loading thoughts...</p>
+  @if (loading) {
+    <p>Loading thoughts...</p>
+  }
 
-  <div *ngFor="let thought of thoughts">
-    <h4>{{ thought.name }}</h4>
-    <small>{{ thought.position }}</small>
-    <p>{{ thought.message }}</p>
-    <small>{{ thought.createdAt | date: "medium" }}</small>
-    <hr />
-  </div>
+  @for (thought of thoughts; track thought.id) {
+    <div>
+      <h4>{{ thought.name }}</h4>
+      <small>{{ thought.position }}</small>
+      <p>{{ thought.message }}</p>
+      <small>{{ thought.createdAt | date: "medium" }}</small>
+      <hr />
+    </div>
+  }
 </section>
