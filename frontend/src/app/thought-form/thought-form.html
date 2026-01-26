@@ -1,4 +1,8 @@
-<form [formGroup]="thoughtForm" (ngSubmit)="submitThought()">
+<form
+  [formGroup]="thoughtForm"
+  (ngSubmit)="submitThought()"
+  class="font-monospace"
+>
   <!-- <input type="text" placeholder="Your name" formControlName="name" /> -->
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
