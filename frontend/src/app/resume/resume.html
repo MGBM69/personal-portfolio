@@ -1,1 +1,106 @@
-<p>resume works!</p>
+<div class="container my-5">
+  @if (isLoggingSuccessful()) {
+    <app-resume-form-com></app-resume-form-com>
+  } @else {
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        @if (!isRegisterFormActive()) {
+          <div class="card p-4 shadow-sm">
+            <div class="card-header font-monospace mb-3">Login with Email!</div>
+            <form [formGroup]="loginForm" class="font-monospace">
+              <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Email</mat-label>
+
+                <input
+                  matInput
+                  type="email"
+                  placeholder="example@gmail.com"
+                  formControlName="email"
+                />
+                @if (
+                  loginForm.get("email")?.invalid &&
+                  loginForm.get("email")?.touched
+                ) {
+                  <mat-error> Please enter a valid email address </mat-error>
+                }
+              </mat-form-field>
+              <button
+                type="button"
+                class="btn btn-light mb-3"
+                (click)="showRegisterForm()"
+              >
+                Not Register Yet?
+              </button>
+
+              <button
+                type="submit"
+                class="btn btn-outline-dark w-100"
+                disabled="loginForm.invalid"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        } @else {
+          <div class="card p-4 shadow-sm">
+            <div class="card-header font-monospace mb-3">
+              Register with Email!
+            </div>
+            <form
+              [formGroup]="registerForm"
+              class="font-monospace"
+              (ngSubmit)="submitRegister()"
+            >
+              <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Email</mat-label>
+
+                <input
+                  matInput
+                  type="email"
+                  placeholder="example@gmail.com"
+                  formControlName="email"
+                />
+                @if (
+                  registerForm.get("email")?.invalid &&
+                  registerForm.get("email")?.touched
+                ) {
+                  <mat-error> Please enter a valid email address </mat-error>
+                }
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  type="password"
+                  placeholder="Enter solid Password"
+                  formControlName="password"
+                />
+                @if (
+                  registerForm.get("password")?.invalid &&
+                  registerForm.get("password")?.touched
+                ) {
+                  <mat-error> Please enter a valid password! </mat-error>
+                }
+              </mat-form-field>
+
+              <button
+                type="submit"
+                class="btn btn-outline-dark w-100 mb-3"
+                [disabled]="registerForm.invalid"
+              >
+                Register
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                (click)="showLoginForm()"
+              >
+                Back to Login
+              </button>
+            </form>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
