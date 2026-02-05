@@ -15,10 +15,11 @@ public class Person {
 	private Long id;
 	
 	@Column(name = "firebase_uid", unique = true, nullable = false)
-	private String firebaseuid;
+	private String firebaseUid;
 	@Column(nullable= false)
 	private String email;
 	
+	@Column(nullable= true)
 	private String username;
 	
 	public Person() {}
@@ -32,11 +33,11 @@ public class Person {
 	}
 
 	public String getFirebaseuid() {
-		return firebaseuid;
+		return this.firebaseUid;
 	}
 
 	public void setFirebaseuid(String firebaseuid) {
-		this.firebaseuid = firebaseuid;
+		this.firebaseUid= firebaseuid;
 	}
 
 	public String getEmail() {
