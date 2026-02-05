@@ -24,5 +24,7 @@ public class ThoughtService {
         return thoughtRepository.findAllByOrderByCreatedAtDesc();
     	
     }
+    
+   
 
 }
