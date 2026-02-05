@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './resume-form-com.css',
 })
 export class ResumeFormCom {
-
+  downloadResume(): void {
+    const link = document.createElement('a');
+    link.href = 'assets/cv/My_CV.pdf';
+    link.download = 'My_CV.pdf';
+    link.click();
+  }
 }

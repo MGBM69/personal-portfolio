@@ -1,1 +1,33 @@
-<p>resume-form-com works!</p>
+<!-- <div class="card text-center font-monospace">
+  <div class="card-header">Thank you for Logged in !</div>
+  <div class="card-body">
+    <h5 class="card-title">Download Resume</h5>
+    <p class="card-text">
+      Download my resume to see my experience and skills in details.
+    </p>
+    <a class="btn btn-primary">Download</a>
+  </div>
+  <div class="card-footer text-body-secondary"></div>
+</div> -->
+
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-6">
+      <div class="card text-center font-monospace">
+        <div class="card-header">Thank you for Logged in !</div>
+
+        <div class="card-body">
+          <h5 class="card-title">Download Resume</h5>
+          <p class="card-text">
+            Download my resume to see my experience and skills in details.
+          </p>
+          <a (click)="downloadResume()" download class="btn btn-primary">
+            Download
+          </a>
+        </div>
+
+        <div class="card-footer text-body-secondary"></div>
+      </div>
+    </div>
+  </div>
+</div>
