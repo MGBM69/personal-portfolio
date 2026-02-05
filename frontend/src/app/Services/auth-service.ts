@@ -27,6 +27,7 @@ export class AuthService {
         iUser.email,
         iUser.password,
       );
+      await this.sendUserToBackend(registeredUser.user);
       return true;
     } catch (error) {
       this.#showMessage('Error creating user' + error);
@@ -40,6 +41,19 @@ export class AuthService {
       duration: 3000,
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
+    });
+  }
+
+  private async sendUserToBackend(user: User): Promise<void> {
+    await fetch('http://localhost:8080/api/person/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firebaseuid: user.uid,
+        email: user.email,
+      }),
     });
   }
 }
