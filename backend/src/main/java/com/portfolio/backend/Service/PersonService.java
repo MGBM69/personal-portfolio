@@ -28,5 +28,14 @@ public class PersonService {
 		 
 		 return person;
 	 }
+	 
+//	 public Person findPersonByEmail(String email) throws UserNotFoundException {
+//		 Person person= this.personRepository.findByEmail(email);
+//		 if(person == null) {
+//			 throw new UserNotFoundException("User Not Found!");
+//		 }
+//		 
+//		 return person;
+//	 }
 
 }

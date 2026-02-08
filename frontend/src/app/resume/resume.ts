@@ -38,6 +38,10 @@ export class Resume implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.#formBuilder.group({
       email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
     });
 
     this.registerForm = this.#formBuilder.group({
@@ -66,5 +70,24 @@ export class Resume implements OnInit {
         this.isLoggingSuccessful.set(true);
       }
     } catch (error) {}
+  }
+
+  async submitLogin(): Promise<void> {
+    try {
+      const user = this.#authService.login(
+        this.loginForm.value.email,
+        this.loginForm.value.password,
+      );
+
+      const person = this.#authService
+        .getPersonByFirebaseUid((await user).uid)
+        .toPromise();
+
+      if (await person) {
+        this.isLoggingSuccessful.set(true);
+      }
+    } catch (error) {
+      this.isLoggingSuccessful.set(false);
+    }
   }
 }
