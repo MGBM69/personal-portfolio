@@ -37,12 +37,14 @@ public class ThoughtController {
     @PostMapping
     public ResponseEntity<Thought> addThought(@RequestBody Thought thought) {
         Thought savedThought = thoughtService.saveThought(thought);
+        messagingTemplate.convertAndSend("/server2client/thoughts", savedThought);
         return ResponseEntity.ok(savedThought);
     }
 
     // GET: Fetch all thoughts
     @GetMapping
     public ResponseEntity<List<Thought>> getAllThoughts() {
+    	
         return ResponseEntity.ok(thoughtService.getAllThoughts());
     }
 }
