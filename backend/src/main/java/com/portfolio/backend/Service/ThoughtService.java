@@ -10,7 +10,7 @@ import com.portfolio.backend.model.Thought;
 @Service
 public class ThoughtService {
 	
-	public final ThoughtRepository thoughtRepository;
+	private final ThoughtRepository thoughtRepository;
 	
 	public ThoughtService(ThoughtRepository thoughtRepository) {
 		this.thoughtRepository=thoughtRepository;
