@@ -20,8 +20,8 @@ export class Home implements OnInit, OnDestroy {
   constructor(private thoughtService: ThoughtService) {}
 
   ngOnInit(): void {
-    this.loadThoughts();
     this.connectToWebSocket();
+    this.loadThoughts();
   }
 
   ngOnDestroy(): void {

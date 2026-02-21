@@ -38,6 +38,7 @@ public class ThoughtController {
     public ResponseEntity<Thought> addThought(@RequestBody Thought thought) {
         Thought savedThought = thoughtService.saveThought(thought);
         messagingTemplate.convertAndSend("/server2client/thoughts", savedThought);
+        System.out.println("Broadcasting thought: " + savedThought.getName());
         return ResponseEntity.ok(savedThought);
     }
 
