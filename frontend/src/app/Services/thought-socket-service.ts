@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Client, IMessage } from '@stomp/stompjs';
-import SockJS from 'sockjs-client';
+import * as SockJS from 'sockjs-client';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,8 @@ export class ThoughtSocketService {
   connect(onMessageReceived: (thought: any) => void): void {
     this.stompClient = new Client({
       // Connect to Spring Boot endpoint
-      webSocketFactory: () => new SockJS('http://localhost:8080/socket'),
+      webSocketFactory: () =>
+        new SockJS.default('http://localhost:8080/socket'),
 
       reconnectDelay: 5000,
 
