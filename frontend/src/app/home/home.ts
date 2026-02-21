@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Thought } from '../model/thought';
 import { ThoughtService } from '../Services/thought-service';
 import { ThoughtForm } from '../thought-form/thought-form';
 import { CommonModule, DatePipe, NgFor, NgIf } from '@angular/common';
+import { ThoughtSocketService } from '../Services/thought-socket-service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { CommonModule, DatePipe, NgFor, NgIf } from '@angular/common';
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
+  #socketService = inject(ThoughtSocketService);
   thoughts: Thought[] = [];
   loading = false;
 
