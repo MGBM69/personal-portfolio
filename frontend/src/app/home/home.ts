@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Thought } from '../model/thought';
 import { ThoughtService } from '../Services/thought-service';
 import { ThoughtForm } from '../thought-form/thought-form';
@@ -12,14 +12,20 @@ import { ThoughtSocketService } from '../Services/thought-socket-service';
   templateUrl: `./home.html`,
   styleUrl: './home.css',
 })
-export class Home implements OnInit {
+export class Home implements OnInit, OnDestroy {
   #socketService = inject(ThoughtSocketService);
   thoughts: Thought[] = [];
   loading = false;
 
   constructor(private thoughtService: ThoughtService) {}
+
   ngOnInit(): void {
     this.loadThoughts();
+    this.connectToWebSocket();
+  }
+
+  ngOnDestroy(): void {
+    this.#socketService.disconnect();
   }
 
   loadThoughts(): void {
@@ -32,6 +38,17 @@ export class Home implements OnInit {
       error: () => {
         this.loading = false;
       },
+    });
+  }
+
+  connectToWebSocket(): void {
+    this.#socketService.connect((newThought: Thought) => {
+      // Prevent duplicates if needed
+      const exists = this.thoughts.find((t) => t.id === newThought.id);
+
+      if (!exists) {
+        this.thoughts.unshift(newThought); // add to top (nice UX)
+      }
     });
   }
 }
