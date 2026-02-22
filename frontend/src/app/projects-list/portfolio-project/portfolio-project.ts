@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectContent } from '../../model/project.content';
 import { AccordionModule } from 'primeng/accordion';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio-project',
-  imports: [AccordionModule],
+  standalone: true,
+  imports: [AccordionModule, CommonModule],
   templateUrl: './portfolio-project.html',
   styleUrl: './portfolio-project.css',
 })

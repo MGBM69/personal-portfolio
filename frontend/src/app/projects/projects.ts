@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { PortfolioProject } from '../projects-list/portfolio-project/portfolio-project';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  standalone: true,
+  imports: [PortfolioProject],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
-export class Projects {
-
-}
+export class Projects {}

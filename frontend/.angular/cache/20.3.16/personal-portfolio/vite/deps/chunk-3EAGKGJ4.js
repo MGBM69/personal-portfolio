@@ -3,7 +3,7 @@ import {
   _CdkPrivateStyleLoader,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-6AJVBXA2.js";
+} from "./chunk-RHAB33VH.js";
 import {
   BidiModule
 } from "./chunk-YC66TZE5.js";
@@ -2702,19 +2702,6 @@ var ConfigurableFocusTrapFactory = class _ConfigurableFocusTrapFactory {
   }], () => [], null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/css-pixel-value.mjs
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
-
 // node_modules/@angular/cdk/fesm2022/scrolling2.mjs
 var RtlScrollAxisType;
 (function(RtlScrollAxisType2) {
@@ -2891,6 +2878,19 @@ function _animationsDisabled() {
   return _getAnimationsState() !== "enabled";
 }
 
+// node_modules/@angular/cdk/fesm2022/css-pixel-value.mjs
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
+}
+
 // node_modules/@angular/material/fesm2022/common-module.mjs
 var MATERIAL_SANITY_CHECKS = new InjectionToken("mat-sanity-checks", {
   providedIn: "root",
@@ -2935,8 +2935,6 @@ export {
   LiveAnnouncer,
   _IdGenerator,
   hasModifierKey,
-  coerceCssPixelValue,
-  coerceBooleanProperty,
   RtlScrollAxisType,
   supportsScrollBehavior,
   getRtlScrollAxisType,
@@ -2944,6 +2942,8 @@ export {
   getSupportedInputTypes,
   Breakpoints,
   _animationsDisabled,
+  coerceCssPixelValue,
+  coerceBooleanProperty,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-QHG7AMPS.js.map
+//# sourceMappingURL=chunk-3EAGKGJ4.js.map

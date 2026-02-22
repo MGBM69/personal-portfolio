@@ -1,15 +1,18 @@
 import {
   BaseComponent,
-  Bind,
-  BindModule,
   PARENT_INSTANCE
-} from "./chunk-D6TYRTBA.js";
+} from "./chunk-Z364NNJR.js";
 import {
   BaseStyle
-} from "./chunk-YRBNXPBI.js";
+} from "./chunk-E3UUGZ3N.js";
 import {
   SharedModule
-} from "./chunk-PDTVZ3BN.js";
+} from "./chunk-AOFF2VVA.js";
+import {
+  Bind,
+  BindModule
+} from "./chunk-BETR7G34.js";
+import "./chunk-WLEIDC5M.js";
 import {
   CommonModule
 } from "./chunk-IQ4XETGP.js";

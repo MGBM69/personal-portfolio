@@ -11,8 +11,8 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home').then((m) => m.Home),
   },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
-  { path: 'portfolio', component: Portfolio },
-  { path: 'projects', component: Projects },
+  { path: 'portfolio', component: Projects },
+
   { path: 'resume', component: Resume },
   { path: 'contact', component: Contact },
   { path: '**', redirectTo: '' },
