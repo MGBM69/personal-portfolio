@@ -31,6 +31,7 @@ export class Resume implements OnInit {
   isRegisterFormActive = signal(false);
   registerForm!: FormGroup;
   isLoggingSuccessful = signal(false);
+  infoCardVisible = signal(true);
 
   #formBuilder = inject(FormBuilder);
   #authService = inject(AuthService);
@@ -61,6 +62,12 @@ export class Resume implements OnInit {
     this.isRegisterFormActive.set(false);
   }
 
+  // hideInfoCard(): void {
+  //   if (this.isLoggingSuccessful()) {
+  //     this.infoCardVisible.set(false);
+  //   }
+  // }
+
   async submitRegister(): Promise<void> {
     try {
       const succes = await this.#authService.createUserWithEmailAndPassword(
@@ -68,6 +75,7 @@ export class Resume implements OnInit {
       );
       if (succes) {
         this.isLoggingSuccessful.set(true);
+        this.infoCardVisible.set(false);
       }
     } catch (error) {}
   }
@@ -86,6 +94,7 @@ export class Resume implements OnInit {
       if (await person) {
         this.isLoggingSuccessful.set(true);
       }
+      this.infoCardVisible.set(false);
     } catch (error) {
       this.isLoggingSuccessful.set(false);
     }

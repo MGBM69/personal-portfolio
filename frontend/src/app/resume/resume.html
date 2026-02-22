@@ -1,4 +1,14 @@
 <div class="container my-5">
+  @if (infoCardVisible()) {
+    <div class="row justify-content-center mb-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card text-bg-dark font-monospace text-center shadow-sm">
+          <div class="card-body">Register/Login to download my Resume!</div>
+        </div>
+      </div>
+    </div>
+  }
+
   @if (isLoggingSuccessful()) {
     <app-resume-form-com></app-resume-form-com>
   } @else {
