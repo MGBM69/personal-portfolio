@@ -6,12 +6,18 @@
 
   <!-- Mobile Navbar -->
   <div class="mobile-nav">
-    <button
+    <!-- <button
       pButton
-      icon="pi pi-bars"
+      icon="pi pi-arrow-right"
       class="menu-btn"
       (click)="drawerVisible = true"
-    ></button>
+    ></button> -->
+    <p-button
+      icon="pi pi-bars"
+      (onClick)="drawerVisible = true"
+      severity="contrast"
+      variant="outlined"
+    />
   </div>
 </div>
 
