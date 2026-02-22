@@ -25,12 +25,12 @@ export class NavBar implements OnInit {
       },
       {
         label: 'Portfolio',
-        icon: 'pi pi-star',
+        icon: 'pi pi-server',
         routerLink: '/portfolio',
       },
       {
         label: 'Resume',
-        icon: 'pi pi-star',
+        icon: 'pi pi-receipt',
         routerLink: '/resume',
       },
       // {
