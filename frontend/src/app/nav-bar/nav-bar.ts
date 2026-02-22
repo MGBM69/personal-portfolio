@@ -66,11 +66,11 @@ export class NavBar implements OnInit {
       //     },
       //   ],
       // },
-      {
-        label: 'Contact',
-        icon: 'pi pi-envelope',
-        routerLink: '/contact',
-      },
+      // {
+      //   label: 'Contact',
+      //   icon: 'pi pi-envelope',
+      //   routerLink: '/contact',
+      // },
     ];
   }
 }

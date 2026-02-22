@@ -14,6 +14,6 @@ export const routes: Routes = [
   { path: 'portfolio', component: Projects },
 
   { path: 'resume', component: Resume },
-  { path: 'contact', component: Contact },
+  // { path: 'contact', component: Contact },
   { path: '**', redirectTo: '' },
 ];
