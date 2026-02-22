@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://www.banuka.me/api',
+  apiUrl: 'https://personal-portfolio-production-9da5.up.railway.app/api',
+  wsUrl: 'https://personal-portfolio-production-9da5.up.railway.app/socket',
 };
