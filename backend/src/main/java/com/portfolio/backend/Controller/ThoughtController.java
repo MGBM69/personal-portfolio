@@ -20,7 +20,8 @@ import com.portfolio.backend.model.Thought;
 @CrossOrigin(origins = {
         "http://localhost:4200",
         "https://banuka.dev",
-        "https://www.banuka.dev"
+        "https://www.banuka.dev",
+        "https://personal-portfolio-three-delta-43.vercel.app"
 })
 public class ThoughtController {
 
