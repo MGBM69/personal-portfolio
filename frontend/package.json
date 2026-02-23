@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node ./node_modules/@angular/cli/bin/ng build --configuration production",
-    "watch": "node ./node_modules/@angular/cli/bin/ng build --watch --configuration developmen",
+    "build": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "prettier": {
