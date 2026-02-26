@@ -12,7 +12,7 @@ public class WebSocketConfiguaration implements WebSocketMessageBrokerConfigurer
 	
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/socket").setAllowedOrigins("http://localhost:4200","https://personal-portfolio-three-delta-43.vercel.app").withSockJS();
+		registry.addEndpoint("/socket").setAllowedOrigins("https://personal-portfolio-orpin-one-49.vercel.app").withSockJS();
 	}
 	
 	@Override

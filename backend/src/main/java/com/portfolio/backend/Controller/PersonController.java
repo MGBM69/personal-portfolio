@@ -15,7 +15,7 @@ import com.portfolio.backend.model.Person;
 @RestController
 @RequestMapping("api/person")
 @CrossOrigin(origins = { "http://localhost:4200",
-		"https://personal-portfolio-three-delta-43.vercel.app/"
+		"https://personal-portfolio-orpin-one-49.vercel.app/"
 		})
 public class PersonController {
 	
