@@ -1,0 +1,19 @@
+<div class="card font-monospace w-100">
+  <h5 class="card-header mb-1">Personal Portfolio Project</h5>
+  <p-accordion [value]="['0']">
+    @for (tab of tabs; track tab.title) {
+      <p-accordion-panel [value]="tab.value">
+        <p-accordion-header>{{ tab.title }}</p-accordion-header>
+        <p-accordion-content>
+          <ul class="m-0 pl-3">
+            @for (point of tab.content; track $index) {
+              <li class="mb-2">{{ point }}</li>
+            }
+          </ul>
+        </p-accordion-content>
+      </p-accordion-panel>
+    }
+  </p-accordion>
+</div>
+
+<div class=""></div>
