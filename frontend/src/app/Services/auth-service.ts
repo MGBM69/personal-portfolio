@@ -9,7 +9,7 @@ import {
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { IUser } from '../model/iuser.model';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { Person } from '../model/Person';
 import { HttpClient } from '@angular/common/http';
 
@@ -51,7 +51,7 @@ export class AuthService {
   }
 
   private async sendUserToBackend(user: User): Promise<void> {
-    await fetch('http://localhost:8080/api/person/register', {
+    await fetch(`${environment.apiUrl}/person/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
