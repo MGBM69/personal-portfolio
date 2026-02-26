@@ -253,16 +253,16 @@
       <div class="spinner-border ms-auto" aria-hidden="true"></div>
     </div>
   }
-  <div class="d-flex justify-content-center mb-5 mt-5">
+  <!-- <div class="d-flex justify-content-center mb-5 mt-5">
     <div class="row g-3 justify-content-center">
       @for (thought of thoughts; track thought.id) {
-        <!-- <div>
+        <div>
       <h4>{{ thought.name }}</h4>
       <small>{{ thought.position }}</small>
       <p>{{ thought.message }}</p>
       <small>{{ thought.createdAt | date: "medium" }}</small>
       <hr />
-    </div> -->
+    </div>
         <div class="col d-flex justify-content-center">
           <div
             class="card border-success mb-3 card h-100 font-monospace"
@@ -275,6 +275,29 @@
             <div class="card-body text-success">
               <p class="card-text">{{ thought.message }}</p>
             </div>
+            <div class="card-footer bg-transparent border-success">
+              <small>{{ thought.createdAt | date: "medium" }}</small>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div> -->
+
+  <div class="container mb-5 mt-5">
+    <div class="row g-3 justify-content-center">
+      @for (thought of thoughts; track thought.id) {
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
+          <div class="card border-success h-100 w-100 font-monospace">
+            <div class="card-header bg-transparent border-success">
+              <p class="fw-bolder fs-5 mb-0">{{ thought.name }}</p>
+              <p class="text-end fs-6 mb-0">{{ thought.position }}</p>
+            </div>
+
+            <div class="card-body text-success">
+              <p class="card-text">{{ thought.message }}</p>
+            </div>
+
             <div class="card-footer bg-transparent border-success">
               <small>{{ thought.createdAt | date: "medium" }}</small>
             </div>
