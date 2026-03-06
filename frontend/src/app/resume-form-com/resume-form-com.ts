@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 export class ResumeFormCom {
   downloadResume(): void {
     const link = document.createElement('a');
-    link.href = 'cv/My_CV.pdf';
-    link.download = 'My_CV.pdf';
+    link.href = 'cv/Banuka_Malshan_Resume.pdf';
+    link.download = 'Banuka_Malshan_Resume.pdf';
     link.click();
   }
 }
